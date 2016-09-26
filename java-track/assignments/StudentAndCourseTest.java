@@ -13,7 +13,7 @@ public class StudentAndCourseTest extends TestCase {
 			"setting your instance variables properly";
 	String s4 = "either your getCredits() method is not doing its job or you're not " +
 			"setting your instance variables properly";
-	String s5 = "either your getClassStanding() method isn't doing its job or you're not " +
+	String s5 = "either your getClassStanding() method is not doing its job or you're not " +
 			"setting your instance variables properly";
 	String s6 = "The plus method shouldn't change the original vector";
 	String s8 = "hasHigherAverage() isn't working properly";
