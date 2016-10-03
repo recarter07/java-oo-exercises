@@ -1,5 +1,5 @@
 
-public class Fraction {
+public class S1Fraction {
 	
 private int numer;
 private int denom;
@@ -17,7 +17,7 @@ private int denom;
 
 //	CONSTRUCTOR:
 // 	instantiate Fraction obj
-	public Fraction(int numer, int denom) {
+	public S1Fraction(int numer, int denom) {
 		this.numer = numer;
 		this.denom = denom;
 	}
@@ -78,7 +78,7 @@ private int denom;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Fraction fract = new Fraction(2, 1);
+		S1Fraction fract = new S1Fraction(2, 1);
 		System.out.println(fract.numer);
 		System.out.println(fract.denom);
 		System.out.println(fract.numer + "/" + fract.denom);

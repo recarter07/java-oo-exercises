@@ -1,5 +1,5 @@
 
-public class Rect {
+public class S1Rect {
 
 private double length, width;
 	
@@ -15,7 +15,7 @@ private double length, width;
 
 //	CONSTRUCTOR:
 // 	instantiate Rect obj
-	public Rect(double length, double width) {
+	public S1Rect(double length, double width) {
 		this.length = length;
 		this.width = width;
 	}
@@ -49,7 +49,7 @@ private double length, width;
 //	}	
 	
 //	is it smaller than another rect? - other.	
-	public boolean isSmaller(Rect otherR) {
+	public boolean isSmaller(S1Rect otherR) {
 		if (this.getArea() < otherR.getArea()) {
 			return true;
 		}
@@ -85,7 +85,7 @@ private double length, width;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Rect rectangle = new Rect(10, 20);
+		S1Rect rectangle = new S1Rect(10, 20);
 		System.out.println(rectangle.length);
 		System.out.println(rectangle.width);
 		System.out.println(rectangle.getArea());

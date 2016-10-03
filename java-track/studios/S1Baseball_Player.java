@@ -1,5 +1,5 @@
 
-public class Baseball_Player {
+public class S1Baseball_Player {
 
 	private String name;
 	private int jerseyNum;
@@ -24,7 +24,7 @@ public class Baseball_Player {
 	
 //  CONSTRUCTOR:	
 //	instantiate baseball player obj
-	public Baseball_Player(String name, int jerseyNum, String hitter) {
+	public S1Baseball_Player(String name, int jerseyNum, String hitter) {
 		this.name = name;
 		this.jerseyNum = jerseyNum;
 //		private type of hitter - right, left, or both
