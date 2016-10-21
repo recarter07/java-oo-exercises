@@ -31,5 +31,29 @@ public class S2Baseball_PlayerTest {
 	}
 	
 	
+	@Test
+	public void testGetHits() {
+		S1Baseball_Player player = new S1Baseball_Player("Jorge", 10, "righty");
+		assertTrue("hits error", player.getHits() == 0);
+//		fail("Not yet implemented");
+	}
+	
+	
+	@Test
+	public void testGetRuns() {
+		S1Baseball_Player player = new S1Baseball_Player("Jorge", 10, "righty");
+		assertTrue("runs error", player.getRuns() == 0);
+//		fail("Not yet implemented");
+	}
+	
+	
+	@Test
+	public void testGetRBIs() {
+		S1Baseball_Player player = new S1Baseball_Player("Jorge", 10, "righty");
+		assertTrue("RBIs error", player.getRBIs() == 0);
+//		fail("Not yet implemented");
+	}
+	
+	
 	
 }
