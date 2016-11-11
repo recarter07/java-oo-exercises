@@ -158,24 +158,74 @@ public class Javagram {
 //		if (filename.equals("exit)) { x = "y";}...
 //		else if (fileName.equals(relPath)) {
 		if (fileName.equals(relPath)) {
-//			System.out.println("Are you sure you want to overwrite original image? Type y or n.");  // there's no pause for input after this Q appears when there's no overwrite var introed afterwards...
+//			while loop here in place for are you sure?
+			int overwrite = 1;
+			do {
 			System.out.println("Are you sure you want to overwrite original image? Type 1 for yes or 2 for no.");
+			overwrite = in.nextInt();         // this does not ask the Q first
+//			} while (overwrite != 2);         // this is understandable by Eclipse
+//			} while (overwrite != 1 || overwrite != 2);   // Eclipse doesn't know what this means
+			} while (overwrite < 1 || overwrite > 2);     // this is okay, Eclipse understands
+//					System.out.println("Are you sure you want to overwrite original image? Type 1 for yes or 2 for no.");
+//					overwrite = in.nextInt();
+//		}
+
+			///// NEED: CATCH NON-INT EXCEPTION in case user types "no" instead of 2 (ex)
+			
+//			System.out.println("Are you sure you want to overwrite original image? Type y or n.");  // there's no pause for input after this Q appears when there's no overwrite var introed afterwards...
+//			System.out.println("Are you sure you want to overwrite original image? Type 1 for yes or 2 for no.");
 //			String overwrite = in.next();   // using String here is confused with the fileName (also an input String)
-			int overwrite = in.nextInt();   // using int instead of String differentiates overwrite from fileName
+//			int overwrite = in.nextInt();   // using int instead of String differentiates overwrite from fileName
+
+////////    WHILE overwrite DOES NOT EQUAL 1 OR 2, DO THIS:
+//			int confirm = 0;           // this must be initialized, but not hard-coded, or won't be able to be 1 or 2
+//			while (confirm != 1 || confirm != 2) {
+//				System.out.println("Are you sure you want to overwrite original image? Type 1 for yes or 2 for no.");
+//				confirm = in.nextInt();
+//			}
+		
+///////     IF/ELSE IF/ELSE overwrite request fails:		
 //			if (overwrite == "y") {
 			if (overwrite == 1) {
-				System.out.println("Did you hear me? It was a yes.");
+				System.out.println("Yes, please overwrite.");
 				String absFileName = dir + File.separator + fileName;
 				processed.save(absFileName);
 				System.out.println("Image saved to " + absFileName);
-			} else if (overwrite == 2) {
-//			} else if (overwrite == "n") {
-				System.out.println("Image not saved");
-			} else {                                          // if overwrite input is a String, InputMismatchException thrown
-				System.out.println("You don't understand?");  // (op) I want it to try again...maybe put all this in a method and call the method again??
-				System.out.println("Image not saved");
 			}
-		} 
+			if (overwrite == 2) {
+//			} else if (overwrite == "n") {
+				System.out.println("Image not saved");        // (needed) I want it to try again...maybe put all this in a method and call the method again??
+			}
+//			else {                                          // if overwrite input is a String, InputMismatchException thrown
+//				int confirm = overwrite;           // this must be initialized, but not hard-coded, or won't be able to be 1 or 2
+//				while (confirm != 1 || confirm != 2) {
+//					System.out.println("Are you sure you want to overwrite original image? Type 1 for yes or 2 for no.");
+//					confirm = in.nextInt();
+//				}
+//			}
+		}
+//				System.out.println("You don't understand?");  // (needed) I want it to try again...maybe put all this in a method and call the method again??
+////			System.out.println("Image not saved");
+//				System.out.println("Are you sure you want to overwrite original image? Type 1 for yes or 2 for no.");
+//				int confirm = in.nextInt();
+//			
+		
+		
+///////     IF/ELSE IF/ELSE overwrite request fails:		
+//					if (confirm == 1) {
+//						System.out.println("Yes! It's yes!");
+//						String absFileName = dir + File.separator + fileName;
+//						processed.save(absFileName);
+//						System.out.println("Image saved to " + absFileName);
+//					} else if (confirm == 2) {
+//						System.out.println("No, it was NO!");
+//						System.out.println("Image not saved");
+//					} else {
+//						System.out.println("Who knows!");
+//					}
+//			}
+			
+
 
 //		System.out.println("Save image to (relative to " + dir + ") (type 'exit' to quit w/o saving):");
 //		String fileName = in.next();
@@ -196,12 +246,12 @@ public class Javagram {
 		
 		// close input scanner
 		System.out.println("We end here.");
-		in.close();
+		in.close();  // this is being noticed, but not run
 		System.out.println("Now what? It's still running...");  // the program doesn't stop until I "quit" from the Javagram file
 //		System.out.println(in.next());       // this gives a "Scanner closed" illegal state exception error
+//////////// use java exit program command
 	}            // this is the curly attached to the beginning of main...
-	
-}
+}                // this is the curly attached to the beginning of the whole class...	
 
 
 
@@ -212,6 +262,7 @@ public class Javagram {
 
 
 
+// EXTRAS - no need to put on Vocarem, just demo
 	// TODO - refactor this method to accept an int parameter, and return an instance of the Filter interface
 	// TODO - refactor this method to thrown an exception if the int doesn't correspond to a filter
 //	private static GrayScaleFilter get Filter() {
